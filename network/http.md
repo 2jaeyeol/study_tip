@@ -59,12 +59,49 @@
     - GET : 리소스 조회
     - POST : 요청 데이터 처리 , 주로 등록에 사용
       - 무조건 등록만이 아닌 URI에 POST요청이 오면 리소스마다 데이터를 어떻게 처리할지 정해야 함
+      - 서버에서 URI를 만들어줌(collection)
     - PUT : 리소스를 대체 , 해당 리소스가 없으면 생성
       - 완전대체
       - 클라이언트가 리소스의 위치를 알고 URI지정(POST와의 차이점)
     - PATCH : 리소스 부분 변경
     - DELETE : 리소스 삭제
 
+## 상태코드
+  - 1xx(Informational) : 요청이 처리중 
+  - 2xx(Successful) : 요청 정상 처리
+    - 200 OK 
+    - 201 Created 새로운 리소스 생성
+    - 202 Accepted 요청이 접수되었으나 처리가 완료가 안됨(ex batch)
+    - 204 No Contents 요청을 성공적으로 했지만 보낼 데이터가 없음
+  - 3xx(Redirection) : 요청을 완료하려면 추가 행동 필요
+    - Redirect : 3xx 결과에 Location 헤더가 있으면 그 Location으로 자동 이동(영구, 일시, 특수(결과대신 캐시이용)) <br/>
+    ex) 만약 /new 라는 곳으로 보냈는데 /new1로 바뀌면 보내주는 것
+    - 영구 Redirection
+      - 301 Moved Permanently 리다이렉트시 요청 메서드가 GET으로 변하고 본문이 제거 될 수 있음
+      - 308 Permanent Rediret 301과 기능은 같으나 본문이 유지
+
+    - 일시 Redirection(URI를 바꾸면 안됨)
+      - 302 Found 리다이렉트시 요청 메서드가 GET으로 변하고 본문이 제거 될 수 있음
+      - 303 See Other 명확하게 GET으로 바뀜
+      - 307 Temporary Redirection 302와 기능은 같으나 본문을 
+      __무조건__ 유지해야함
+      - 304 Not Modified 캐시를 목적으로 사용(응답에 바디를 포함하면 안된다)
+      - 새로고침을 할때 발생할 수 있음(중복이 될 수 있음)
+  - 4xx(Client Error) : 클라이언트 오류
+    - 오류의 원인이 클라이언트에 있음
+    - 5xx 와의 차이점은 4xx는 수정해서 보내야 하고 5xx 는 클라이언트가 나중에 똑같은 요청을 보내도 성공할 수 있다.
+    - 401 Unauthorized 클라이언트가 해당 리소스에 대해 인증이 필요함 
+    - 403 Forbidden 서버가 요청을 했지만 거절(접근권한)
+    - 404 Not Found 요청 리소스가 서버에 없음
+  - 5xx(Server Error) : 서버 오류
+    - 500 Internal Server Error 서버 내부 문제로 오류 발생
+    - 503 Service Unavailable 서비스 이용 불가
+      - 서버를 잠시 이용 불가
+      - Retry-After 헤더 필드로 언제 복구 되는지 알려줄 수 있음
+
+      
+## HTTP Header
+  
 
 
 
