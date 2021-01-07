@@ -101,7 +101,33 @@
 
       
 ## HTTP Header
+  - HTTP 전송에 필요한 모든 부가정보
+  - 표현
+    - Content-Type : 데이터 형식(미디어타입,문자 인코딩)
+    - Content-Encoding : 데이터 압축방식
+    - Content-Language : 데이터 언어
+    - Content-Length : 데이터 길이(전송 코딩을 사용하면 사용하면 안됨)
+  - 협상(클라이언트가 선호하는 표현 요청) - 요청시만 사용
+    - Accept : 선호 미디어타입
+    - Accept-Charset : 선호 문자 인코딩
+    - Accept-Encoding : 선호 압축 인코딩
+    - Accept-Language : 선호 자연 언어
+    - 우선순위 : 0~1 클수록 높은 우선순위 ex) ko;q=0.9
+  - 전송 방식
+    - 단순 전송 : Content-Length를 알고 있을때 그에 대한 전송을 줘라
+    - 압축 전송 : Content-Encoding 사용
+    - 분할 전송 : Content-Encoding = chunked 사용, Content-Length 사용x
+    - 범위 전송 : Content-Range 사용 
+
+  - 일반 정보
+    - Form : 유저 에이전트의 이메일 정보 
+    - Referer : 이전 웹페이지 주소
+    
   
+  - BODY
+    - 본문을 통해 데이터 전달
+    - 표현은 요청이나 응답에서 전달할 실제 데이터
+    - 표현 헤더는 표현 데이터를 해석할 수 있는 정보 제공
 
 
 
