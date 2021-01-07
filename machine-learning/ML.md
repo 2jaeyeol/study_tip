@@ -3,18 +3,18 @@
 
 # 연관
 ### Andrew Ng's ML class
-https://www.coursera.org/ml-003/lecture
+https://www.coursera.org/ml-003/lecture<br/>
 http://holehouse.org/mlclass/
 
 ### Convolutional Neural Networks for Visual Recognition
 https://cs231n.github.io/
 
 ### Tensorflow
-https://www.tensorflow.org/
+https://www.tensorflow.org/<br/>
 https://github.com/aymericdamien/tensorflow-examples/
 
 ### sung Kim
-http://hunkim.github.io/ml/
+http://hunkim.github.io/ml/<br/>
 https://github.com/hunkim/DeepLearningZeroToAll/tree/master/tf2
 
 <br/><br/>
@@ -24,8 +24,9 @@ https://github.com/hunkim/DeepLearningZeroToAll/tree/master/tf2
 - 프로그램 자체가 데이터를 학습해서 배우는 능력을 갖는 것(프로세스?)
 
 ## 학습방법
-- Supervised 
-  - 정해져있는 데이터를 갖고 학습하는 것
-  - regression / binary classification / multi-label classification
-- Unsupervised
-  - 데이터를 보고 스스로 학습하는 것
+  - Supervised 
+    - 정해져있는 데이터를 갖고 학습하는 것
+    - regression / binary classification / multi-label classification
+  - Unsupervised
+    - 데이터를 보고 스스로 학습하는 것
+
