@@ -4,4 +4,4 @@ hello = tf.constant("hello tensorflow")
 
 
 
-print(f(hello))
+print(hello)
