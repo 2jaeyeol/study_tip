@@ -45,6 +45,22 @@ https://github.com/hunkim/DeepLearningZeroToAll/tree/master/tf2
 
   1. Data Flow graph : Node(operation) + Edge(data array)
 <br/>
+  - 모델구조
+  ```python
+  # 1은 컬럼수
+  X = tf.keras.layers.Input(shape=[1])
+  Y = tf.keras.layers.Dense(1)(X)
+  model = tf.keras.models.Model(X,Y)
+  # loss 학습의 정도
+  # loss = (예측 - 결과)^2 들의 평균 0에 가까울수록 학습이 잘됨 
+  model.compile(loss='mse')
+
+  # 모델 학습(FIT) epochs = 반복학습
+  model.fit(독립, 종속, epochs = 1000)
+
+  # 모델 이용
+  print('Predications: ', model.predict([[15]]))
+  ```
 
 # Pandas
   ## 데이터 읽어오기
