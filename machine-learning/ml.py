@@ -1,7 +1,11 @@
 import tensorflow as tf
-
-hello = tf.constant("hello tensorflow")
-
+import pandas as pd
 
 
-print(hello)
+url = '/Users/jaeyeol/jaeyeol/study/machine-learning/csv/boston.csv'
+
+bt = pd.read_csv(url)
+
+
+print(bt.shape)
+print(bt.columns)
