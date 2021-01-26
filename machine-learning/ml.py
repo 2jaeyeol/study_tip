@@ -1,35 +1,14 @@
 import tensorflow as tf
+import matplotlib.pyplot as plt
 import pandas as pd
 
+(mnist_x, mnist_y), _ = tf.keras.datasets.mnist.load_data()
+print(mnist_x.shape,mnist_y.shape)
 
-# url = '/Users/jaeyeol/jaeyeol/study/machine-learning/csv/lemonade.csv'
+(cifar_x, cifar_y), _ = tf.keras.datasets.cifar10.load_data()
+print(cifar_x.shape,cifar_y.shape)
 
-# lemon = pd.read_csv(url)
-
-# sub = lemon[['판매량']]
-# ind = lemon[['온도']]
-# print(lemon.head())
-# print(ind.shape , sub.shape)
-
+plt.imshow(mnist_x[0], cmap='gray')
+plt.show()
 
 
-# X = tf.keras.layers. Input(shape=[1])
-# Y = tf.keras.layers.Dense(1)(X)
-# model = tf.keras.models.Model(X,Y)
-# model.compile(loss='mse')
-
-# model.fit(ind, sub, epochs=10)
-# print(model.predict([[15]]))
-
-url = '/Users/jaeyeol/jaeyeol/study/machine-learning/csv/iris.csv'
-iris = pd.read_csv(url)
-print(iris.head())
-encoding = pd.get_dummies(iris)
-ind = encoding[['꽃잎길이','꽃잎폭','꽃받침길이','꽃받침폭']]
-sub = encoding[['품종_setosa','품종_versicolor','품종_virginica']]
-print(ind.shape,sub.shape)
-
-X = tf.keras.layers.Input(shape=[4])
-Y = tf.keras.layers.Dense(3, activation = 'softmax')(X)
-model = tf.keras.models.Model(X,Y)
-model.compile(loss='categorical_crossentropy', metrics = 'accuracy')

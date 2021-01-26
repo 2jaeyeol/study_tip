@@ -40,6 +40,7 @@ https://github.com/hunkim/DeepLearningZeroToAll/tree/master/tf2
   - Neaural Network(Deep Learning)
 
 # TensorFlow
+
 ## 사용
   - colaboratory , jupiter notebook 사용 가능
   
@@ -95,6 +96,23 @@ https://github.com/hunkim/DeepLearningZeroToAll/tree/master/tf2
   model = tf.keras.models.Model(X,Y)
   ```
 
+## image
+  - 이미지 불러오기
+    ```python
+    import matplotlib.pyplot as plt
+    import pandas as pd
+
+    (mnist_x, mnist_y), _ = tf.keras.datasets.mnist.load_data()
+    print(mnist_x.shape,mnist_y.shape)
+
+    (cifar_x, cifar_y), _ = tf.keras.datasets.cifar10.load_data()
+    print(cifar_x.shape,cifar_y.shape)
+
+    plt.imshow(mnist_x[0], cmap='gray')
+    plt.show()
+    ```
+    
+
 # Pandas
   ## 데이터 읽어오기
   ```python
@@ -121,6 +139,19 @@ https://github.com/hunkim/DeepLearningZeroToAll/tree/master/tf2
   mean = 아이리스['꽃잎폭'].mean()
   아이리스['꽃잎폭'] = 아이리스['꽃잎폭'].fillna(mean)
   ```
+
+# numpy를 이용한 차원확인
+ ```python
+    import numpy as np
+    d1 = np.array([1,2,3,4,5])
+    print(d1.shape)
+    #(5,)
+    
+    d2 = np.array([d1,d1,d1,d1])
+    print(d2.shape)
+    #(4,5)
+
+ ```
 
 
 
