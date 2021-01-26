@@ -29,7 +29,7 @@ ind = encoding[['꽃잎길이','꽃잎폭','꽃받침길이','꽃받침폭']]
 sub = encoding[['품종_setosa','품종_versicolor','품종_virginica']]
 print(ind.shape,sub.shape)
 
-  X = tf.keras.layers.Input(shape=[4])
-  Y = tf.keras.layers.Dense(3, activation = 'softmax')(X)
-  model = tf.keras.m odels.Model(X,Y)
-  model.compile(loss='categorical_crossentropy', metrics = 'accuracy')
+X = tf.keras.layers.Input(shape=[4])
+Y = tf.keras.layers.Dense(3, activation = 'softmax')(X)
+model = tf.keras.models.Model(X,Y)
+model.compile(loss='categorical_crossentropy', metrics = 'accuracy')

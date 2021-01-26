@@ -42,11 +42,13 @@ https://github.com/hunkim/DeepLearningZeroToAll/tree/master/tf2
 # TensorFlow
 ## 사용
   - colaboratory , jupiter notebook 사용 가능
-
+  
   1. Data Flow graph : Node(operation) + Edge(data array)
 <br/>
+
   - 모델구조(회귀)
-  ```python
+
+```python
   # 1은 컬럼수
   X = tf.keras.layers.Input(shape=[1])
   Y = tf.keras.layers.Dense(1)(X)
@@ -64,7 +66,7 @@ https://github.com/hunkim/DeepLearningZeroToAll/tree/master/tf2
   model.get_weights()
   # 요약
   model.summury() 
-  ```
+```
   
   - 모델구조(분류)
   ```python
