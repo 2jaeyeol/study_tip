@@ -13,6 +13,15 @@ int lcm(int a, int b){
   return (a * b) / gcd(a, b);
 }
 
+// pair배열 오름차순
+bool compare(const pair<int, int>& a, const pair<int,int>& b){
+    if(a.first == b.first)
+        return a.second < b.second;
+    return a.first <b.first;
+}
+
+
+
 //lower_bound (찾으려 하는 key 값이 없으면 key 값보다 큰 가장 작은 정수의 인덱스)
 //stl ex) lower_bound(arr, arr + 10, 6)
 int lower_bound(int *arr, int n, int key){ // n = 배열 수
