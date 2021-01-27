@@ -157,6 +157,8 @@ https://github.com/hunkim/DeepLearningZeroToAll/tree/master/tf2
   model = tf.keras.models.Model(X, Y)
   model.compile(loss='categorical_crossentropy', metrics='accuracy')
   ```
+- filter
+  1. filter set : 3차원 형태로 된 가중치의 모음 , 특징맵과 1:1
 
 # Pandas
   ## 데이터 읽어오기
