@@ -112,6 +112,51 @@ https://github.com/hunkim/DeepLearningZeroToAll/tree/master/tf2
     plt.show()
     ```
     
+- 기본 이미지 학습
+  ```python
+  # 데이터 준비
+  (독립, 종속), _ = tf.keras.datasets.mnist.load_data()
+  print(독립.shape , 종속.shape)
+  독립 = 독립.reshape(60000,784)
+  종속 = pd.get.dummies(종속)
+  print(독립.shape , 종속.shape)
+
+  # 모델생성
+  X = tf.keras.layers.Input(shape=[784])
+  H = tf.keras.layers.Dense(84, activation='swish')(X)
+  Y = tf.keras.layers.Dense(10, activation='softmax')(H)
+  model = tf.keras.models.Model(X, Y)
+  model.compile(loss='categorical_crossentropy', metrics='accuracy')
+
+  # 모델 학습
+  model.fit(독립, 종속, epochs=10)
+
+  # 모델을 이용합니다. 
+  pred = model.predict(독립[0:5])
+  pd.DataFrame(pred).round(2)
+  
+  ```
+- Flatten Layer를 활용한 이미지 학습
+  ```python
+  # 데이터준비에서
+    독립 = 독립.reshape(60000,784) 삭제
+  # 모델생성에서 
+  H = tf.keras.layers.Flatten()(X) 추가
+  ```
+
+- convolution : 특정한 패턴의 특징이 어디서 나타나는지 확인하는 도구
+  ```python
+  # 모델 생성
+  X = tf.keras.layers.Input(shape=[28, 28, 1])
+  #필터셋을 3개로 필터셋 사이즈를 5로 
+  H = tf.keras.layers.Conv2D(3, kernel_size=5, activation='swish')(X)
+  H = tf.keras.layers.Conv2D(6, kernel_size=5, activation='swish')(H)
+  H = tf.keras.layers.Flatten()(H)
+  H = tf.keras.layers.Dense(84, activation='swish')(H)
+  Y = tf.keras.layers.Dense(10, activation='softmax')(H)
+  model = tf.keras.models.Model(X, Y)
+  model.compile(loss='categorical_crossentropy', metrics='accuracy')
+  ```
 
 # Pandas
   ## 데이터 읽어오기
