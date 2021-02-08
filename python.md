@@ -1,5 +1,6 @@
 # python
 
+
 -  변수출력
   ```python
   name = "강아지"
@@ -159,3 +160,132 @@ users = range(1,21) # 1부터 20까지 저장
 users = list(users)
 
 ```
+
+- 한줄 for문
+    ```python
+    students = [1,2,3,4,5]
+    students = [i+100 for i in students] # 101,102,103,104,105
+
+    students = ["iron man","thor","groot"]
+    students = [len(i) for i in students]
+
+    students = ["iron man","thor","groot"]
+    students = [i.upper() for i in students]
+    ```
+
+- 함수
+    ```python
+    def tworeturn()
+        return commit , money
+
+    commit , money = tworeturn() # 가능
+
+    #가변인자 , 전역변수 사용
+    gun = 10
+    def profile(name , age, *language):
+        global gun
+        print()
+    
+    profile("유재석", 20, "python","java","js")
+    profile("조세호", 15, "python","c++")
+
+
+    ```
+ 
+ - class
+    ```python
+    # 생성자 
+    class Unit:
+        def __init__(self, name, hp, damage):
+            self.name = name
+            self.hp = hp
+            self.damage = damage
+    # 클래스 내부 함수 변수에 self 무조건 있어야함.
+        def att(self):
+
+    marine1 = Unit("마린", 40, 5)
+    marine2 = Unit("마린", 40, 5)
+    tank = Unit("탱크", 150, 35)
+
+    # 객체에 외부변수 추가가능 다른객체에는 사용불가(wraith2)
+    wraith1 = Unit("레이스", 80, 5)
+    wraith1.clocking = True
+
+    # 상속
+    class Unit:
+        def __init__(self, name, hp):
+            self.name = name
+            self.hp = hp
+            
+    class AttackUnit(Unit):
+        def __init__(self, name, hp, damage):
+            Unit.__init__(self,name,hp)
+            super().__init__(name,hp) #위와 같음 다중상속에선 따로 명시적으로 줘야함
+            self.damage = damage
+    ```
+    
+- err
+    ```python
+    try:
+        raise ValueError: #일부러 에러 발생시키기
+    except:
+    
+    #사용자 정의 에러
+    class 에러이름(Exception):
+        def __init__(self,msg):
+            self.msg = msg
+        def __str__(self):
+            return self.msg
+
+    raise 에러이름("에러메세지")
+    fanally:    # 끝나고 무조건 발생
+        print("bla")
+    
+    ```
+
+- tip
+    ```python
+    print("bla~~~", end = "기본값") # 개행이 안됨
+    print("bla~~") # bla~~~ bla
+    print("python","java", sep="기본값") # 사이를 띄어쓰기가 아닌 기본값으로
+    
+    #표준출력, 에러
+    import sys
+    print("python","java", file = sys.stdout)
+    print("python","java", file = sys.stderr)
+    
+    #정렬
+    scores = {"수학": 0 , "영어": 50, "코딩": 100}
+    for subject, score in scores.items():
+        print(subject.ljust(8),str(score).rjust(4) ) 
+        # 총 8자리를 확보후 왼쪽정렬 , 총 4자리를 확보후 오른쪽정렬
+
+    #001, 002, 003, 004 ...
+    for num in range(1,21):
+        print("대기번호 : " + str(num).zfill(3)) #3자리 중 빈공간을 0으로 채운다
+    
+    # 빈 자리는 빈공간으로 두고, 오른족 정렬, 총 10자리 공간 확보
+    print("{0: >10}".format(500))
+    
+    # 양수일땐 + , 음수일땐 -
+    print("{0: >+10}".format(500))
+    print("{0: >+10}".format(-500))
+    
+    # 왼쪽 정렬하고, 빈칸으로_를 채움
+    print("{0:_<10}".format(500))
+
+    # 3자리마다 , 찍기
+    print("{0:,}",format(1000000000)) # 1,000,000,000 
+    print("{0:+,}",format(1000000000)) # +1,000,000,000
+    print("{0:+,}",format(-1000000000)) # -1,000,000,000
+    # 3자리마다 , 부호, 자릿수, 빈자리^
+    print("{0:^<+30,}".format(1000000000))
+    # 소수점 출력
+    print("{0:f}".format(5/3)) 1.666667
+    # 소수점 특정 자리수까지만 표시(2)
+    print("{0:0.2f}".format(5/3))
+    ```
+- 파일
+- pickle
+
+
