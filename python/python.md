@@ -284,7 +284,37 @@ users = list(users)
     print("{0:f}".format(5/3)) 1.666667
     # 소수점 특정 자리수까지만 표시(2)
     print("{0:0.2f}".format(5/3))
+
+    # 라이브러리 찾기
+    pypi
+    # 모듈 찾기
+    python module index
     ```
+
+- 모듈
+  ```python
+  import theater_module
+  theater_module.함수()
+
+  import theater_module as mv
+  mv.함수()
+
+  from theater_module import *
+  함수()
+
+  # 파일설정
+  # 폴더안에 파일을 사용할때
+  __init__.py 폴더 안에 
+  __all__ = ["파일명","파일명"]
+
+  # 모듈 직접 실행
+  if __name__ == "__main__":
+  
+  # 파일 위치 찾기
+  import inspect
+  import random
+  print(inspect.getfile(random))
+  ```
 - 파일
 - pickle
 
