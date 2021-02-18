@@ -50,8 +50,13 @@
   rank = soup.find("태그명",attrs={"class" : "class 값"})
   # class 안의 a태그
   print(rank.a)
+  #속성 접근
+  rank.a["href"]
   
   # 부모, 형제
-  rank.next_sibling
+  .parent
+  .next_sibling , .previous_sibling, .find_next_sibling(조건)
+  .find_previous_sibling
+
   ```
   
